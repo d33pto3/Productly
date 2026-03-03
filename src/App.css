@@ -3,3 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.pagination {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.pagination li {
+  cursor: pointer;
+}
+
+.active {
+  font-weight: bold;
+  text-decoration: underline;
+}

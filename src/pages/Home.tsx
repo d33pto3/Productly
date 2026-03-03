@@ -1,30 +1,18 @@
 import { useEffect, useMemo, useState } from "react";
 import type { Product } from "../types/product";
 import ProductList from "../components/ProductList";
-import SearchBar from "../components/SearchBar";
 import CategoryFilter from "../components/CategoryFilter";
+import { useOutletContext } from "react-router";
+
+interface LayoutContext {
+  searchText: string;
+}
 
 const Home = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [searchText, setSearchText] = useState("");
 
-  const categories = useMemo(() => {
-    return Array.from(new Set(products.map((p) => p.category)));
-  }, [products]);
-
-  const filteredProducts = useMemo(() => {
-    return products.filter((product) => {
-      const matchesSearch = product.title
-        .toLowerCase()
-        .includes(searchText.toLowerCase());
-
-      const matchesCategory =
-        selectedCategory === "All" || product.category === selectedCategory;
-
-      return matchesSearch && matchesCategory;
-    });
-  }, [products, searchText, selectedCategory]);
+  const { searchText } = useOutletContext<LayoutContext>();
 
   useEffect(() => {
     const getProductData = async () => {
@@ -45,15 +33,30 @@ const Home = () => {
     getProductData();
   }, []);
 
+  const categories = useMemo(() => {
+    return Array.from(new Set(products.map((p) => p.category)));
+  }, [products]);
+
+  const filteredProducts = useMemo(() => {
+    return products.filter((product) => {
+      const matchesSearch = product.title
+        .toLowerCase()
+        .includes(searchText.toLowerCase());
+
+      const matchesCategory =
+        selectedCategory === "All" || product.category === selectedCategory;
+
+      return matchesSearch && matchesCategory;
+    });
+  }, [products, searchText, selectedCategory]);
+
   return (
     <div>
-      <h1>Product Management Dashboard</h1>
       <CategoryFilter
         categories={categories}
         selectedCategory={selectedCategory}
         onCategoryChange={setSelectedCategory}
       />
-      <SearchBar onSearch={setSearchText} />
       <ProductList products={filteredProducts} />
     </div>
   );
