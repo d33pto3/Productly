@@ -1,3 +1,6 @@
+import { useCallback } from "react";
+import CategoryFilterButton from "./CategoryFilterButton";
+
 type CategoryFilterProps = {
   categories: string[];
   selectedCategory: string;
@@ -8,36 +11,34 @@ const CategoryFilter = (categoryFilterProps: CategoryFilterProps) => {
   const { categories, selectedCategory, onCategoryChange } =
     categoryFilterProps;
 
-  const handleClick = (category: string) => {
-    onCategoryChange(category);
-  };
+  const handleClick = useCallback(
+    (category: string) => {
+      onCategoryChange(category);
+    },
+    [onCategoryChange],
+  );
 
   console.log(selectedCategory);
 
   return (
-    <div className="flex gap-4 scroll-auto my-5">
-      <button
-        className={`${selectedCategory === "All" ? "bg-gray-300 px-2 rounded-xl border border-gray-400" : "text-gray-500 hover:text-gray-900 cursor-pointer"} py-0.5 font-medium`}
-        onClick={() => {
-          handleClick("All");
-        }}
-        key="All"
-        disabled={selectedCategory === "All"}
-      >
-        All Products
-      </button>
-      {categories.map((category) => (
-        <button
-          className={`${selectedCategory === category ? "bg-gray-300 px-2 rounded-xl border border-gray-400" : "text-gray-500 hover:text-gray-900 cursor-pointer"} py-0.5 font-medium`}
-          key={category}
-          onClick={() => {
-            handleClick(category);
-          }}
-          disabled={selectedCategory === "All"}
-        >
-          {category}
-        </button>
-      ))}
+    <div className="px-[10%] flex gap-4 scroll-auto my-5">
+      <div className="flex gap-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
+        <CategoryFilterButton
+          value="All"
+          onClick={handleClick}
+          selectedCategory={selectedCategory}
+          key="All"
+          title="All products"
+        />
+        {categories.map((category) => (
+          <CategoryFilterButton
+            value={category}
+            onClick={handleClick}
+            selectedCategory={selectedCategory}
+            key={category}
+          />
+        ))}
+      </div>
     </div>
   );
 };

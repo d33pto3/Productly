@@ -2,21 +2,23 @@ import Button from "./Button";
 
 type CategoryFilterButtonProps = {
   selectedCategory: string;
-  categoryName: string;
-  handleClick: (category: string) => void;
+  value: string;
+  onClick: (category: string) => void;
+  title?: string;
 };
 
 const CategoryFilterButton = ({
   selectedCategory,
-  categoryName,
-  handleClick,
+  onClick,
+  value,
+  title,
 }: CategoryFilterButtonProps) => {
   return (
     <Button
-      title={categoryName}
-      handleClick={handleClick}
-      isDisabled={selectedCategory === categoryName}
-      className={`${selectedCategory === "All" ? "bg-gray-300 px-2 rounded-xl border border-gray-400" : "text-gray-500 hover:text-gray-900 cursor-pointer"} py-0.5 font-medium`}
+      title={title || value}
+      onClick={() => onClick(value)}
+      isDisabled={selectedCategory === value}
+      className={`${selectedCategory === value ? "bg-gray-300 px-3 rounded-xl border border-gray-400" : "text-gray-500 hover:text-gray-900 cursor-pointer"} py-0.5 font-medium`}
     />
   );
 };

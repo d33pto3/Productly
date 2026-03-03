@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { HeartIcon } from "../icons/Heart";
 import { MoonIcon } from "../icons/Moon";
 import SearchBar from "./SearchBar";
 import Title from "./Title";
+import { SunMediumIcon } from "../icons/Sun";
 
 interface NavbarProps {
   value: string;
@@ -9,15 +11,43 @@ interface NavbarProps {
 }
 
 const Navbar = ({ onSearch, value }: NavbarProps) => {
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+      return "dark";
+    }
+    return "light";
+  });
+
+  console.log(theme);
+
+  const toggleTheme = () => {
+    const isDark = document.documentElement.classList.toggle("dark");
+
+    const newTheme = isDark ? "dark" : "light";
+    localStorage.setItem("theme", newTheme);
+    setTheme(newTheme);
+  };
+
   return (
-    <div className="py-5 flex justify-between items-center">
+    <div className="px-[10%] py-5 flex justify-between items-center">
       <Title title="Productly" />
       <div className="flex gap-4 items-center">
         <SearchBar value={value} onSearch={onSearch} />
-        <MoonIcon
-          className="bg-gray-200 hover:bg-gray-300 rounded-xl p-2.5 cursor-pointer"
-          size={20}
-        />
+        {theme === "light" ? (
+          <MoonIcon
+            className="bg-gray-200 hover:bg-gray-300 rounded-xl p-2.5 cursor-pointer"
+            size={20}
+            onClick={toggleTheme}
+          />
+        ) : (
+          <SunMediumIcon
+            className="bg-gray-200 hover:bg-gray-300 rounded-xl p-2.5 cursor-pointer"
+            size={20}
+            onClick={toggleTheme}
+          />
+        )}
         <div className="bg-red-200 flex gap-1 p-2 rounded-xl items-center">
           <HeartIcon className="text-red-500" size={20} />
           <p className="text-red-900">0</p>

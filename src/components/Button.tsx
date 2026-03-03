@@ -1,14 +1,14 @@
 type ButtonProps = {
   title: string;
-  handleClick: (item: string) => void;
+  onClick: () => void;
   isDisabled?: boolean;
   className: string;
 };
 
-const Button = ({ title, handleClick, isDisabled, className }: ButtonProps) => {
+const Button = ({ title, onClick, isDisabled, className }: ButtonProps) => {
   return (
     <button
-      onClick={() => handleClick(title)}
+      onClick={onClick}
       disabled={isDisabled || false}
       className={className}
     >

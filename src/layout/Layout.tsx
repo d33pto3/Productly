@@ -5,7 +5,7 @@ import { useState } from "react";
 const Layout = () => {
   const [searchText, setSearchText] = useState("");
   return (
-    <main className="mx-[10%]">
+    <main>
       <Navbar value={searchText} onSearch={setSearchText} />
       <Outlet context={{ searchText }} />
     </main>
