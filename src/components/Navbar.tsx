@@ -31,7 +31,7 @@ const Navbar = ({ onSearch, value }: NavbarProps) => {
   };
 
   return (
-    <div className="px-[10%] py-5 flex justify-between items-center">
+    <div className="px-[10%] py-5 flex justify-between items-center bg-white dark:bg-gray-800">
       <Title title="Productly" />
       <div className="flex gap-4 items-center">
         <SearchBar value={value} onSearch={onSearch} />
@@ -43,7 +43,7 @@ const Navbar = ({ onSearch, value }: NavbarProps) => {
           />
         ) : (
           <SunMediumIcon
-            className="bg-gray-200 hover:bg-gray-300 rounded-xl p-2.5 cursor-pointer"
+            className="bg-gray-700 hover:bg-gray-600 text-white rounded-xl p-2.5 cursor-pointer"
             size={20}
             onClick={toggleTheme}
           />

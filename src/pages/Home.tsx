@@ -57,7 +57,7 @@ const Home = () => {
         selectedCategory={selectedCategory}
         onCategoryChange={setSelectedCategory}
       />
-      <hr className="text-gray-300" />
+      <hr className="text-gray-300 dark:text-gray-600" />
       <ProductList products={filteredProducts} />
     </div>
   );

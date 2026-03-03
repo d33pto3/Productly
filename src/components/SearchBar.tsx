@@ -46,10 +46,10 @@ const SearchBar = ({ value, onSearch }: SearchBarProps) => {
         size={20}
       />
       <input
-        className="w-full border border-gray-300 rounded-xl py-2.5 pl-10 pr-4 text-sm outline-none transition
-        focus:border-gray-500
+        className="w-full border border-gray-300 dark:border-gray-600 rounded-xl py-2.5 pl-10 pr-4 text-sm outline-none transition
+        focus:border-gray-500 dark:focus:border-blue-400
         focus:ring
-        focus:ring-gray-200"
+        focus:ring-gray-200 dark:focus:ring-blue-400 text-black dark:text-gray-200"
         value={inputValue}
         onChange={handleChange}
         placeholder="Search Products"

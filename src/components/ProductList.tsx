@@ -54,7 +54,7 @@ const ProductList = ({ products }: ProductListProps) => {
   };
 
   return (
-    <div className="px-[10%] py-8">
+    <div className="px-[10%] py-8 bg-white dark:bg-black">
       <p className="mb-4">
         Showing {currentItems.length}{" "}
         {currentItems.length === 1 ? "product" : "products"}

@@ -21,8 +21,8 @@ const CategoryFilter = (categoryFilterProps: CategoryFilterProps) => {
   console.log(selectedCategory);
 
   return (
-    <div className="px-[10%] flex gap-4 scroll-auto my-5">
-      <div className="flex gap-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
+    <div className="px-[10%] flex gap-4 scroll-auto py-5 bg-white dark:bg-gray-800">
+      <div className="flex gap-4 overflow-x-auto whitespace-nowrap no-scrollbar">
         <CategoryFilterButton
           value="All"
           onClick={handleClick}
