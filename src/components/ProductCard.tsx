@@ -1,13 +1,14 @@
 import { motion, AnimatePresence, type Variants } from "motion/react";
 import { HeartIcon } from "../icons/Heart";
 import type { Product } from "../types/product";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import ProductSkeleton from "./ProductSkeleton";
 
 interface ProductCardProps {
   product: Product;
   isFavorite: boolean;
   onToggleFavorite: (productId: string) => void;
+  index: number;
 }
 
 const cardVariants: Variants = {
@@ -28,8 +29,18 @@ export function ProductCard({
   product,
   isFavorite,
   onToggleFavorite,
+  index,
 }: ProductCardProps) {
   const [isLoaded, setIsLoaded] = useState(false);
+
+  const isPriority = index < 4;
+
+  const optimizedImageUrl = useMemo(() => {
+    if (typeof window !== "undefined" && window.innerWidth < 768) {
+      return product.imageUrl.replace("300", "200");
+    }
+    return product.imageUrl;
+  }, [product.imageUrl]);
 
   const handleClick = (id: string) => {
     onToggleFavorite(id);
@@ -42,7 +53,12 @@ export function ProductCard({
       initial="hidden"
       animate="visible"
       exit="exit"
-      whileHover={isLoaded ? { y: -8, transition: { duration: 0.2 } } : {}}
+      // whileHover={isLoaded ? { y: -8, transition: { duration: 0.2 } } : {}}
+      whileHover={
+        isLoaded && !("ontouchstart" in window)
+          ? { y: -8, transition: { duration: 0.2 } }
+          : {}
+      }
       className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full relative"
     >
       <AnimatePresence>
@@ -51,7 +67,7 @@ export function ProductCard({
             key="skeleton-overlay"
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.3 }}
             className="absolute inset-0 z-20"
           >
             <ProductSkeleton />
@@ -65,9 +81,13 @@ export function ProductCard({
         <div className="relative overflow-hidden group">
           <motion.img
             layout
-            src={product.imageUrl}
+            // src={product.imageUrl}
+            src={optimizedImageUrl}
             alt={product.title}
             onLoad={() => setIsLoaded(true)}
+            loading={isPriority ? "eager" : "lazy"}
+            fetchPriority={isPriority ? "high" : "low"}
+            decoding="async"
             className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-300" />

@@ -12,19 +12,24 @@ type ProductListProps = {
 const FAVORITES_KEY = "product-favorites";
 const ITEMS_PER_PAGE = 20;
 
-const gridVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.05,
-    },
-  },
-};
-
 const ProductList = ({ products }: ProductListProps) => {
   const [currentPage, setCurrentPage] = useState(0);
   const { favorites, toggleFavorite } = useFavorites();
+
+  const isMobile = useMemo(
+    () => typeof window !== "undefined" && window.innerWidth < 768,
+    [],
+  );
+
+  const gridVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: isMobile ? 0.02 : 0.05,
+      },
+    },
+  };
 
   const pageCount = Math.ceil(products.length / ITEMS_PER_PAGE);
 
@@ -59,13 +64,14 @@ const ProductList = ({ products }: ProductListProps) => {
         variants={gridVariants}
         initial="hidden"
         animate="visible"
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+        className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
       >
         <AnimatePresence mode="popLayout">
-          {currentItems.map((product) => (
+          {currentItems.map((product, index) => (
             <ProductCard
               key={product.id}
               product={product}
+              index={index}
               isFavorite={favorites.has(product.id)}
               onToggleFavorite={toggleFavorite}
             />
@@ -83,7 +89,7 @@ const ProductList = ({ products }: ProductListProps) => {
             pageCount={pageCount}
             forcePage={currentPage}
             containerClassName="flex gap-2 items-center list-none"
-            pageClassName="rounded-xl overflow-hidden transition-all duration-200 border border-gray-200 dark:border-gray-800 hover:border-blue-500 dark:hover:border-blue-400"
+            pageClassName="rounded-xl overflow-hidden transition-all duration-200 border border-gray-200 dark:border-gray-800 hover:border-blue-500 dark:hover:border-blue-400 hover:cursor-pointer"
             pageLinkClassName="block px-4 py-2 text-sm font-semibold text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
             activeClassName="!bg-blue-600 !border-blue-600"
             activeLinkClassName="!text-white"

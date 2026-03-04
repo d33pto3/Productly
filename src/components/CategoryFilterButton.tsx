@@ -17,13 +17,14 @@ const CategoryFilterButton = ({
 
   return (
     <motion.button
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: isSelected ? 1 : 1.05 }}
+      whileTap={{ scale: isSelected ? 1 : 0.95 }}
       onClick={() => onClick(value)}
-      className={`relative px-3 py-1 text-sm font-medium transition-colors duration-200 focus:outline-none ${isSelected
-        ? "text-blue-600 dark:text-blue-400"
-        : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
-        }`}
+      className={`relative px-3 py-1 text-sm font-medium transition-colors duration-200 focus:outline-none ${
+        isSelected
+          ? "text-blue-600 dark:text-blue-400"
+          : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:cursor-pointer"
+      }`}
       title={title || value}
     >
       <span className="relative z-10">{title || value}</span>

@@ -72,7 +72,7 @@ const Navbar = ({ onSearch, value }: NavbarProps) => {
           <button
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-            className="focus:outline-none"
+            className="focus:outline-none mt-1.5"
           >
             {theme === "light" ? (
               <MoonIcon
@@ -93,7 +93,9 @@ const Navbar = ({ onSearch, value }: NavbarProps) => {
           className="bg-red-200 flex gap-1 p-2 sm:p-2.5 rounded-xl items-center min-w-14 cursor-default"
         >
           <HeartIcon className="text-red-500" size={20} />
-          <p className="text-red-900" aria-hidden="true">{favoriteCount}</p>
+          <p className="text-red-900" aria-hidden="true">
+            {favoriteCount}
+          </p>
         </motion.div>
       </motion.div>
     </motion.nav>
