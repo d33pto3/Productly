@@ -1,7 +1,7 @@
 import { motion, AnimatePresence, type Variants } from "motion/react";
 import { HeartIcon } from "../icons/Heart";
 import type { Product } from "../types/product";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import ProductSkeleton from "./ProductSkeleton";
 
 interface ProductCardProps {
@@ -34,13 +34,6 @@ export function ProductCard({
   const [isLoaded, setIsLoaded] = useState(false);
 
   const isPriority = index < 4;
-
-  const optimizedImageUrl = useMemo(() => {
-    if (typeof window !== "undefined" && window.innerWidth < 768) {
-      return product.imageUrl.replace("300", "200");
-    }
-    return product.imageUrl;
-  }, [product.imageUrl]);
 
   const handleClick = (id: string) => {
     onToggleFavorite(id);
@@ -81,8 +74,7 @@ export function ProductCard({
         <div className="relative overflow-hidden group">
           <motion.img
             layout
-            // src={product.imageUrl}
-            src={optimizedImageUrl}
+            src={product.imageUrl}
             alt={product.title}
             onLoad={() => setIsLoaded(true)}
             loading={isPriority ? "eager" : "lazy"}
