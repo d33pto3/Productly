@@ -4,6 +4,7 @@ import { MoonIcon } from "../icons/Moon";
 import SearchBar from "./SearchBar";
 import Title from "./Title";
 import { SunMediumIcon } from "../icons/Sun";
+import { useFavorites } from "../context/useFavorites";
 
 interface NavbarProps {
   value: string;
@@ -19,8 +20,7 @@ const Navbar = ({ onSearch, value }: NavbarProps) => {
     }
     return "light";
   });
-
-  console.log(theme);
+  const { favoriteCount } = useFavorites();
 
   const toggleTheme = () => {
     const isDark = document.documentElement.classList.toggle("dark");
@@ -50,7 +50,7 @@ const Navbar = ({ onSearch, value }: NavbarProps) => {
         )}
         <div className="bg-red-200 flex gap-1 p-2 rounded-xl items-center">
           <HeartIcon className="text-red-500" size={20} />
-          <p className="text-red-900">0</p>
+          <p className="text-red-900">{favoriteCount}</p>
         </div>
       </div>
     </div>

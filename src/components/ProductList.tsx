@@ -1,7 +1,8 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Product } from "../types/product";
 import ReactPaginate from "react-paginate";
 import { ProductCard } from "./ProductCard";
+import { useFavorites } from "../context/useFavorites";
 
 type ProductListProps = {
   products: Product[];
@@ -12,18 +13,7 @@ const ITEMS_PER_PAGE = 20;
 
 const ProductList = ({ products }: ProductListProps) => {
   const [currentPage, setCurrentPage] = useState(0);
-  const [favorites, setFavorites] = useState<Set<string>>(() => {
-    const storedFavorites = localStorage.getItem(FAVORITES_KEY);
-    if (storedFavorites) {
-      try {
-        const parsedFavorites = JSON.parse(storedFavorites);
-        return new Set(parsedFavorites);
-      } catch (error) {
-        console.error("Error loading favorites:", error);
-      }
-    }
-    return new Set();
-  });
+  const { favorites, toggleFavorite } = useFavorites();
 
   const pageCount = Math.ceil(products.length / ITEMS_PER_PAGE);
 
@@ -36,22 +26,9 @@ const ProductList = ({ products }: ProductListProps) => {
     setCurrentPage(event.selected);
   };
 
-  const toggleFavorite = (productId: string) => {
-    setFavorites((prev) => {
-      const newFavorites = new Set(prev);
-      if (newFavorites.has(productId)) {
-        newFavorites.delete(productId);
-      } else {
-        newFavorites.add(productId);
-      }
-      // Persist to localStorage
-      localStorage.setItem(
-        FAVORITES_KEY,
-        JSON.stringify(Array.from(newFavorites)),
-      );
-      return newFavorites;
-    });
-  };
+  useEffect(() => {
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify(Array.from(favorites)));
+  }, [favorites]);
 
   return (
     <div className="px-[10%] py-8 bg-white dark:bg-black">

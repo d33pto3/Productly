@@ -12,6 +12,10 @@ export function ProductCard({
   isFavorite,
   onToggleFavorite,
 }: ProductCardProps) {
+  const handleClick = (id: string) => {
+    onToggleFavorite(id);
+  };
+
   return (
     <div
       className={`bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300`}
@@ -23,7 +27,7 @@ export function ProductCard({
           className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300 ease-in-out"
         />
         <HeartIcon
-          onClick={() => onToggleFavorite(product.id)}
+          onClick={() => handleClick(product.id)}
           className={`w-9 h-9 absolute top-2 right-2 p-2 bg-white dark:bg-gray-300 rounded-full shadow-md transition-transform duration-200 hover:cursor-pointer ${
             isFavorite
               ? "fill-red-500 text-red-500"
