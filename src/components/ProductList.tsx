@@ -31,7 +31,7 @@ const ProductList = ({ products }: ProductListProps) => {
   }, [favorites]);
 
   return (
-    <div className="px-[10%] h-screen py-8 bg-white dark:bg-black">
+    <div className="font-space px-[10%] min-h-screen py-8 bg-white dark:bg-black">
       <p className="mb-4 text-gray-600 dark:text-gray-200">
         Showing {currentItems.length}{" "}
         {currentItems.length === 1 ? "product" : "products"}
@@ -58,12 +58,12 @@ const ProductList = ({ products }: ProductListProps) => {
             pageCount={pageCount}
             forcePage={currentPage}
             containerClassName="flex gap-2 items-center list-none"
-            pageClassName="border border-gray-300 dark:border-gray-700 rounded-lg overflow-hidden hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors hover:cursor-pointer"
-            pageLinkClassName="block px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300"
+            pageClassName="border border-gray-300 dark:border-gray-700 rounded-lg overflow-hidden hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors hover:cursor-pointer w-8 h-8 sm:w-10 sm:h-10"
+            pageLinkClassName="block px-3 sm:px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300"
             activeClassName="!bg-blue-600 !border-blue-600"
             activeLinkClassName="!text-white"
-            previousClassName="flex items-center justify-center w-10 h-10 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer text-gray-700 dark:text-gray-300"
-            nextClassName="flex items-center justify-center w-10 h-10 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer text-gray-700 dark:text-gray-300"
+            previousClassName="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer text-gray-700 dark:text-gray-300"
+            nextClassName="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer text-gray-700 dark:text-gray-300"
             disabledClassName="opacity-30 cursor-not-allowed hover:bg-transparent dark:hover:bg-transparent"
             breakClassName="px-2 text-gray-500"
           />

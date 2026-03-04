@@ -18,7 +18,7 @@ const CategoryFilterButton = ({
       title={title || value}
       onClick={() => onClick(value)}
       isDisabled={selectedCategory === value}
-      className={`${selectedCategory === value ? "bg-gray-300 px-3 rounded-xl border border-gray-400" : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 cursor-pointer"} py-0.5 font-medium`}
+      className={`${selectedCategory === value ? "bg-gray-300 px-2 sm:px-3 rounded-xl border border-gray-400" : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 cursor-pointer"} text-[12px] sm:text-sm py-0.5 font-medium`}
     />
   );
 };

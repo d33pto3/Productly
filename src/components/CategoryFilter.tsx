@@ -18,10 +18,8 @@ const CategoryFilter = (categoryFilterProps: CategoryFilterProps) => {
     [onCategoryChange],
   );
 
-  console.log(selectedCategory);
-
   return (
-    <div className="px-[10%] flex gap-4 scroll-auto py-5 bg-white dark:bg-gray-800">
+    <div className="font-space px-[10%] flex gap-4 scroll-auto py-3 sm:py-5 bg-white dark:bg-gray-800">
       <div className="flex gap-4 overflow-x-auto whitespace-nowrap no-scrollbar">
         <CategoryFilterButton
           value="All"

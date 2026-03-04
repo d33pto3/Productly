@@ -1,6 +1,15 @@
 @import "tailwindcss";
+@import "@fontsource/space-grotesk/400.css";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/700.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  .font-space {
+    font-family: "Space Grotesk", ui-sans-serif, system-ui;
+  }
+}
 
 .no-scrollbar::-webkit-scrollbar {
   display: none;

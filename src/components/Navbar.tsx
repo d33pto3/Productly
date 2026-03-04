@@ -31,24 +31,24 @@ const Navbar = ({ onSearch, value }: NavbarProps) => {
   };
 
   return (
-    <div className="px-[10%] py-5 flex justify-between items-center bg-white dark:bg-gray-800">
+    <div className="px-[10%] py-5 sm:flex justify-between items-center bg-white dark:bg-gray-800 gap-8">
       <Title title="Productly" />
-      <div className="flex gap-4 items-center">
+      <div className="font-space flex gap-2 mt-4 sm:mt-0 md:gap-4 items-center">
         <SearchBar value={value} onSearch={onSearch} />
         {theme === "light" ? (
           <MoonIcon
-            className="bg-gray-200 hover:bg-gray-300 rounded-xl p-2.5 cursor-pointer"
+            className="bg-gray-200 hover:bg-gray-300 rounded-xl p-2 sm:p-2.5 cursor-pointer"
             size={20}
             onClick={toggleTheme}
           />
         ) : (
           <SunMediumIcon
-            className="bg-gray-700 hover:bg-gray-600 text-white rounded-xl p-2.5 cursor-pointer"
+            className="bg-gray-700 hover:bg-gray-600 text-white rounded-xl p-2.5 sm:p-3 cursor-pointer"
             size={20}
             onClick={toggleTheme}
           />
         )}
-        <div className="bg-red-200 flex gap-1 p-2 rounded-xl items-center">
+        <div className="bg-red-200 flex gap-1 p-2 sm:p-2.5 rounded-xl items-center min-w-14">
           <HeartIcon className="text-red-500" size={20} />
           <p className="text-red-900">{favoriteCount}</p>
         </div>

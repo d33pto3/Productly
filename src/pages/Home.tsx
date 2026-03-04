@@ -2,7 +2,9 @@ import { useEffect, useMemo, useState } from "react";
 import type { Product } from "../types/product";
 import ProductList from "../components/ProductList";
 import CategoryFilter from "../components/CategoryFilter";
+import Loading from "../components/Loading";
 import { useOutletContext } from "react-router";
+import EmptyState from "../components/EmptyState";
 
 interface LayoutContext {
   searchText: string;
@@ -10,23 +12,34 @@ interface LayoutContext {
 
 const Home = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const { searchText } = useOutletContext<LayoutContext>();
 
   useEffect(() => {
     const getProductData = async () => {
+      setLoading(true);
+      setError(null);
       try {
-        const response = await fetch("data/products.json");
+        const response = await fetch("data/product.json");
 
         if (!response.ok) {
-          throw new Error("Failed to fetch products");
+          throw new Error(`Failed to fetch products: ${response.statusText}`);
         }
 
         const data = await response.json();
         setProducts(data);
       } catch (err) {
-        console.log(err);
+        console.error("Fetch error:", err);
+        setError(
+          err instanceof Error
+            ? err.message
+            : "An unexpected error occurred while loading products.",
+        );
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -50,6 +63,16 @@ const Home = () => {
     });
   }, [products, searchText, selectedCategory]);
 
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return (
+      <EmptyState title="Error Loading Products" message={error} icon="error" />
+    );
+  }
+
   return (
     <div>
       <CategoryFilter
@@ -58,7 +81,7 @@ const Home = () => {
         onCategoryChange={setSelectedCategory}
       />
       <hr className="text-gray-300 dark:text-gray-600" />
-      <ProductList products={filteredProducts} />
+      <ProductList key={products.length} products={filteredProducts} />
     </div>
   );
 };
