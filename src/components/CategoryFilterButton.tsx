@@ -1,4 +1,4 @@
-import Button from "./Button";
+import { motion } from "motion/react";
 
 type CategoryFilterButtonProps = {
   selectedCategory: string;
@@ -13,13 +13,33 @@ const CategoryFilterButton = ({
   value,
   title,
 }: CategoryFilterButtonProps) => {
+  const isSelected = selectedCategory === value;
+
   return (
-    <Button
-      title={title || value}
+    <motion.button
+      whileHover={{ scale: 1.025 }}
+      whileTap={{ scale: 0.95 }}
       onClick={() => onClick(value)}
-      isDisabled={selectedCategory === value}
-      className={`${selectedCategory === value ? "bg-gray-300 px-2 sm:px-3 rounded-xl border border-gray-400" : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 cursor-pointer"} text-[12px] sm:text-sm py-0.5 font-medium`}
-    />
+      className={`relative px-3 py-1 text-sm font-medium transition-colors duration-200 focus:outline-none ${isSelected
+        ? "text-blue-600 dark:text-blue-400"
+        : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
+        }`}
+      title={title || value}
+    >
+      <span className="relative z-10">{title || value}</span>
+      {isSelected && (
+        <motion.div
+          layoutId="active-category"
+          className="absolute inset-0 bg-blue-50 dark:bg-blue-900/30 rounded-xl border border-blue-200 dark:border-blue-800"
+          initial={false}
+          transition={{
+            type: "spring",
+            stiffness: 500,
+            damping: 30,
+          }}
+        />
+      )}
+    </motion.button>
   );
 };
 
