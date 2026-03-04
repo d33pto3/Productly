@@ -17,7 +17,7 @@ const CategoryFilterButton = ({
 
   return (
     <motion.button
-      whileHover={{ scale: 1.025 }}
+      whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.95 }}
       onClick={() => onClick(value)}
       className={`relative px-3 py-1 text-sm font-medium transition-colors duration-200 focus:outline-none ${isSelected

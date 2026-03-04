@@ -82,14 +82,10 @@ const Navbar = ({ onSearch, value }: NavbarProps) => {
             />
           )}
         </motion.div>
-        <motion.div
-          variants={itemsVariants}
-          whileHover={{ scale: 1.05 }}
-          className="bg-red-200 flex gap-1 p-2 sm:p-2.5 rounded-xl items-center min-w-14 cursor-default"
-        >
+        <div className="bg-red-200 flex gap-1 p-2 sm:p-2.5 rounded-xl items-center min-w-14 cursor-default">
           <HeartIcon className="text-red-500" size={20} />
           <p className="text-red-900">{favoriteCount}</p>
-        </motion.div>
+        </div>
       </motion.div>
     </motion.div>
   );
