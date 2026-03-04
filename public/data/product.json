@@ -5,7 +5,7 @@
     "imageUrl": "https://picsum.photos/300?random=1",
     "price": 89.99,
     "category": "Electronics",
-    "description": "High-quality wireless headphones with active noise cancellation."
+     "likes": 384, "description": "High-quality wireless headphones with active noise cancellation."
   },
   {
     "id": "2",
@@ -13,7 +13,7 @@
     "imageUrl": "https://picsum.photos/300?random=2",
     "price": 19.99,
     "category": "Electronics",
-    "description": "Adjustable aluminum stand compatible with most smartphones."
+     "likes": 384, "description": "Adjustable aluminum stand compatible with most smartphones."
   },
   {
     "id": "3",
@@ -21,7 +21,7 @@
     "imageUrl": "https://picsum.photos/300?random=3",
     "price": 49.99,
     "category": "Electronics",
-    "description": "Compact speaker delivering powerful sound and deep bass."
+     "likes": 384, "description": "Compact speaker delivering powerful sound and deep bass."
   },
   {
     "id": "4",
@@ -29,7 +29,7 @@
     "imageUrl": "https://picsum.photos/300?random=4",
     "price": 59.99,
     "category": "Electronics",
-    "description": "Ergonomic gaming mouse with customizable DPI settings."
+     "likes": 384, "description": "Ergonomic gaming mouse with customizable DPI settings."
   },
   {
     "id": "5",
@@ -37,7 +37,7 @@
     "imageUrl": "https://picsum.photos/300?random=5",
     "price": 129.99,
     "category": "Electronics",
-    "description": "RGB mechanical keyboard with tactile switches."
+     "likes": 384, "description": "RGB mechanical keyboard with tactile switches."
   },
   {
     "id": "6",
@@ -45,7 +45,7 @@
     "imageUrl": "https://picsum.photos/300?random=6",
     "price": 39.99,
     "category": "Electronics",
-    "description": "Multi-port USB-C hub with HDMI and SD card support."
+     "likes": 384, "description": "Multi-port USB-C hub with HDMI and SD card support."
   },
   {
     "id": "7",
@@ -53,7 +53,7 @@
     "imageUrl": "https://picsum.photos/300?random=7",
     "price": 329.99,
     "category": "Electronics",
-    "description": "Ultra HD 27-inch monitor with vibrant color accuracy."
+     "likes": 384, "description": "Ultra HD 27-inch monitor with vibrant color accuracy."
   },
   {
     "id": "8",
@@ -61,7 +61,7 @@
     "imageUrl": "https://picsum.photos/300?random=8",
     "price": 24.99,
     "category": "Electronics",
-    "description": "Fast wireless charging pad compatible with Qi devices."
+     "likes": 384, "description": "Fast wireless charging pad compatible with Qi devices."
   },
   {
     "id": "9",
@@ -69,7 +69,7 @@
     "imageUrl": "https://picsum.photos/300?random=9",
     "price": 149.99,
     "category": "Electronics",
-    "description": "Fitness tracker with heart rate monitoring and GPS."
+     "likes": 384, "description": "Fitness tracker with heart rate monitoring and GPS."
   },
   {
     "id": "10",
@@ -77,7 +77,7 @@
     "imageUrl": "https://picsum.photos/300?random=10",
     "price": 99.99,
     "category": "Electronics",
-    "description": "True wireless earbuds with immersive sound quality."
+     "likes": 384, "description": "True wireless earbuds with immersive sound quality."
   },
 
   {
@@ -86,7 +86,7 @@
     "imageUrl": "https://picsum.photos/300?random=11",
     "price": 14.99,
     "category": "Fashion",
-    "description": "Soft cotton casual t-shirt for everyday comfort."
+     "likes": 384, "description": "Soft cotton casual t-shirt for everyday comfort."
   },
   {
     "id": "12",
@@ -94,7 +94,7 @@
     "imageUrl": "https://picsum.photos/300?random=12",
     "price": 39.99,
     "category": "Fashion",
-    "description": "Lightweight summer dress with floral design."
+     "likes": 384, "description": "Lightweight summer dress with floral design."
   },
   {
     "id": "13",
@@ -102,7 +102,7 @@
     "imageUrl": "https://picsum.photos/300?random=13",
     "price": 69.99,
     "category": "Fashion",
-    "description": "Classic blue denim jacket with modern fit."
+     "likes": 384, "description": "Classic blue denim jacket with modern fit."
   },
   {
     "id": "14",
@@ -110,7 +110,7 @@
     "imageUrl": "https://picsum.photos/300?random=14",
     "price": 89.99,
     "category": "Fashion",
-    "description": "Breathable sneakers designed for daily running."
+     "likes": 384, "description": "Breathable sneakers designed for daily running."
   },
   {
     "id": "15",
@@ -118,7 +118,7 @@
     "imageUrl": "https://picsum.photos/300?random=15",
     "price": 29.99,
     "category": "Fashion",
-    "description": "Premium leather wallet with multiple compartments."
+     "likes": 384, "description": "Premium leather wallet with multiple compartments."
   },
   {
     "id": "16",
@@ -126,7 +126,7 @@
     "imageUrl": "https://picsum.photos/300?random=16",
     "price": 59.99,
     "category": "Fashion",
-    "description": "Stylish handbag with spacious interior."
+     "likes": 384, "description": "Stylish handbag with spacious interior."
   },
   {
     "id": "17",
@@ -134,7 +134,7 @@
     "imageUrl": "https://picsum.photos/300?random=17",
     "price": 12.99,
     "category": "Fashion",
-    "description": "Adjustable baseball cap made from breathable fabric."
+     "likes": 384, "description": "Adjustable baseball cap made from breathable fabric."
   },
   {
     "id": "18",
@@ -142,7 +142,7 @@
     "imageUrl": "https://picsum.photos/300?random=18",
     "price": 149.99,
     "category": "Fashion",
-    "description": "Slim-fit blazer perfect for formal occasions."
+     "likes": 384, "description": "Slim-fit blazer perfect for formal occasions."
   },
   {
     "id": "19",
@@ -150,7 +150,7 @@
     "imageUrl": "https://picsum.photos/300?random=19",
     "price": 24.99,
     "category": "Fashion",
-    "description": "Comfortable shorts suitable for workouts."
+     "likes": 384, "description": "Comfortable shorts suitable for workouts."
   },
   {
     "id": "20",
@@ -158,7 +158,7 @@
     "imageUrl": "https://picsum.photos/300?random=20",
     "price": 19.99,
     "category": "Fashion",
-    "description": "Stylish sunglasses with full UV protection."
+     "likes": 384, "description": "Stylish sunglasses with full UV protection."
   },
 
   {
@@ -167,7 +167,7 @@
     "imageUrl": "https://picsum.photos/300?random=21",
     "price": 199.99,
     "category": "Home",
-    "description": "Modern wooden coffee table for living room."
+     "likes": 384, "description": "Modern wooden coffee table for living room."
   },
   {
     "id": "22",
@@ -175,7 +175,7 @@
     "imageUrl": "https://picsum.photos/300?random=22",
     "price": 34.99,
     "category": "Home",
-    "description": "Energy-efficient LED lamp with adjustable brightness."
+     "likes": 384, "description": "Energy-efficient LED lamp with adjustable brightness."
   },
   {
     "id": "23",
@@ -183,7 +183,7 @@
     "imageUrl": "https://picsum.photos/300?random=23",
     "price": 79.99,
     "category": "Home",
-    "description": "Stainless steel knife set with wooden block."
+     "likes": 384, "description": "Stainless steel knife set with wooden block."
   },
   {
     "id": "24",
@@ -191,7 +191,7 @@
     "imageUrl": "https://picsum.photos/300?random=24",
     "price": 59.99,
     "category": "Home",
-    "description": "Elegant ceramic dinnerware set for 6 people."
+     "likes": 384, "description": "Elegant ceramic dinnerware set for 6 people."
   },
   {
     "id": "25",
@@ -199,7 +199,7 @@
     "imageUrl": "https://picsum.photos/300?random=25",
     "price": 29.99,
     "category": "Home",
-    "description": "Ergonomic pillow providing neck support."
+     "likes": 384, "description": "Ergonomic pillow providing neck support."
   },
   {
     "id": "26",
@@ -207,7 +207,7 @@
     "imageUrl": "https://picsum.photos/300?random=26",
     "price": 22.99,
     "category": "Home",
-    "description": "Minimalist wall clock for contemporary spaces."
+     "likes": 384, "description": "Minimalist wall clock for contemporary spaces."
   },
   {
     "id": "27",
@@ -215,7 +215,7 @@
     "imageUrl": "https://picsum.photos/300?random=27",
     "price": 15.99,
     "category": "Home",
-    "description": "Decorative ceramic plant pot for indoor use."
+     "likes": 384, "description": "Decorative ceramic plant pot for indoor use."
   },
   {
     "id": "28",
@@ -223,7 +223,7 @@
     "imageUrl": "https://picsum.photos/300?random=28",
     "price": 249.99,
     "category": "Home",
-    "description": "High suction vacuum cleaner for deep cleaning."
+     "likes": 384, "description": "High suction vacuum cleaner for deep cleaning."
   },
   {
     "id": "29",
@@ -231,7 +231,7 @@
     "imageUrl": "https://picsum.photos/300?random=29",
     "price": 27.99,
     "category": "Home",
-    "description": "Compact lamp ideal for bedside tables."
+     "likes": 384, "description": "Compact lamp ideal for bedside tables."
   },
   {
     "id": "30",
@@ -239,7 +239,7 @@
     "imageUrl": "https://picsum.photos/300?random=30",
     "price": 32.99,
     "category": "Home",
-    "description": "Durable non-stick frying pan for daily cooking."
+     "likes": 384, "description": "Durable non-stick frying pan for daily cooking."
   },
 
   {
@@ -248,7 +248,7 @@
     "imageUrl": "https://picsum.photos/300?random=31",
     "price": 49.99,
     "category": "Books",
-    "description": "Comprehensive guide to modern programming concepts."
+     "likes": 384, "description": "Comprehensive guide to modern programming concepts."
   },
   {
     "id": "32",
@@ -256,7 +256,7 @@
     "imageUrl": "https://picsum.photos/300?random=32",
     "price": 18.99,
     "category": "Books",
-    "description": "Proven strategies to build good habits and break bad ones."
+     "likes": 384, "description": "Proven strategies to build good habits and break bad ones."
   },
   {
     "id": "33",
@@ -264,7 +264,7 @@
     "imageUrl": "https://picsum.photos/300?random=33",
     "price": 39.99,
     "category": "Books",
-    "description": "A handbook of agile software craftsmanship."
+     "likes": 384, "description": "A handbook of agile software craftsmanship."
   },
   {
     "id": "34",
@@ -272,7 +272,7 @@
     "imageUrl": "https://picsum.photos/300?random=34",
     "price": 16.99,
     "category": "Books",
-    "description": "Rules for focused success in a distracted world."
+     "likes": 384, "description": "Rules for focused success in a distracted world."
   },
   {
     "id": "35",
@@ -280,7 +280,7 @@
     "imageUrl": "https://picsum.photos/300?random=35",
     "price": 44.99,
     "category": "Books",
-    "description": "Practical introduction to software design patterns."
+     "likes": 384, "description": "Practical introduction to software design patterns."
   },
   {
     "id": "36",
@@ -288,7 +288,7 @@
     "imageUrl": "https://picsum.photos/300?random=36",
     "price": 21.99,
     "category": "Books",
-    "description": "Timeless lessons on wealth, greed, and happiness."
+     "likes": 384, "description": "Timeless lessons on wealth, greed, and happiness."
   },
   {
     "id": "37",
@@ -296,7 +296,7 @@
     "imageUrl": "https://picsum.photos/300?random=37",
     "price": 14.99,
     "category": "Books",
-    "description": "Notes on startups and building the future."
+     "likes": 384, "description": "Notes on startups and building the future."
   },
   {
     "id": "38",
@@ -304,7 +304,7 @@
     "imageUrl": "https://picsum.photos/300?random=38",
     "price": 42.99,
     "category": "Books",
-    "description": "Journey to mastery for modern software developers."
+     "likes": 384, "description": "Journey to mastery for modern software developers."
   },
   {
     "id": "39",
@@ -312,7 +312,7 @@
     "imageUrl": "https://picsum.photos/300?random=39",
     "price": 12.99,
     "category": "Books",
-    "description": "What the rich teach their kids about money."
+     "likes": 384, "description": "What the rich teach their kids about money."
   },
   {
     "id": "40",
@@ -320,7 +320,7 @@
     "imageUrl": "https://picsum.photos/300?random=40",
     "price": 17.99,
     "category": "Books",
-    "description": "How great leaders inspire everyone to take action."
+     "likes": 384, "description": "How great leaders inspire everyone to take action."
   },
 
   {
@@ -329,7 +329,7 @@
     "imageUrl": "https://picsum.photos/300?random=41",
     "price": 29.99,
     "category": "Sports",
-    "description": "Non-slip yoga mat with extra cushioning."
+     "likes": 384, "description": "Non-slip yoga mat with extra cushioning."
   },
   {
     "id": "42",
@@ -337,7 +337,7 @@
     "imageUrl": "https://picsum.photos/300?random=42",
     "price": 199.99,
     "category": "Sports",
-    "description": "Space-saving adjustable dumbbell set."
+     "likes": 384, "description": "Space-saving adjustable dumbbell set."
   },
   {
     "id": "43",
@@ -345,7 +345,7 @@
     "imageUrl": "https://picsum.photos/300?random=43",
     "price": 24.99,
     "category": "Sports",
-    "description": "Durable football suitable for outdoor play."
+     "likes": 384, "description": "Durable football suitable for outdoor play."
   },
   {
     "id": "44",
@@ -353,7 +353,7 @@
     "imageUrl": "https://picsum.photos/300?random=44",
     "price": 89.99,
     "category": "Sports",
-    "description": "Lightweight tennis racket with strong grip."
+     "likes": 384, "description": "Lightweight tennis racket with strong grip."
   },
   {
     "id": "45",
@@ -361,7 +361,7 @@
     "imageUrl": "https://picsum.photos/300?random=45",
     "price": 59.99,
     "category": "Sports",
-    "description": "Protective helmet designed for road cycling."
+     "likes": 384, "description": "Protective helmet designed for road cycling."
   },
   {
     "id": "46",
@@ -369,7 +369,7 @@
     "imageUrl": "https://picsum.photos/300?random=46",
     "price": 9.99,
     "category": "Sports",
-    "description": "Adjustable skipping rope for cardio workouts."
+     "likes": 384, "description": "Adjustable skipping rope for cardio workouts."
   },
   {
     "id": "47",
@@ -377,7 +377,7 @@
     "imageUrl": "https://picsum.photos/300?random=47",
     "price": 149.99,
     "category": "Sports",
-    "description": "Lightweight waterproof camping tent."
+     "likes": 384, "description": "Lightweight waterproof camping tent."
   },
   {
     "id": "48",
@@ -385,7 +385,7 @@
     "imageUrl": "https://picsum.photos/300?random=48",
     "price": 29.99,
     "category": "Sports",
-    "description": "High-grip basketball for all surfaces."
+     "likes": 384, "description": "High-grip basketball for all surfaces."
   },
   {
     "id": "49",
@@ -393,7 +393,7 @@
     "imageUrl": "https://picsum.photos/300?random=49",
     "price": 19.99,
     "category": "Sports",
-    "description": "Elastic resistance bands for strength training."
+     "likes": 384, "description": "Elastic resistance bands for strength training."
   },
   {
     "id": "50",
@@ -401,6 +401,6 @@
     "imageUrl": "https://picsum.photos/300?random=50",
     "price": 499.99,
     "category": "Sports",
-    "description": "Compact foldable treadmill for home workouts."
+     "likes": 384, "description": "Compact foldable treadmill for home workouts."
   }
 ]

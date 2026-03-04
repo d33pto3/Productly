@@ -17,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     const getProductData = async () => {
       try {
-        const response = await fetch("data/product.json");
+        const response = await fetch("data/products.json");
 
         if (!response.ok) {
           throw new Error("Failed to fetch products");

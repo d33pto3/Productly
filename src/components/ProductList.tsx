@@ -31,8 +31,8 @@ const ProductList = ({ products }: ProductListProps) => {
   }, [favorites]);
 
   return (
-    <div className="px-[10%] py-8 bg-white dark:bg-black">
-      <p className="mb-4">
+    <div className="px-[10%] h-screen py-8 bg-white dark:bg-black">
+      <p className="mb-4 text-gray-600 dark:text-gray-200">
         Showing {currentItems.length}{" "}
         {currentItems.length === 1 ? "product" : "products"}
       </p>
