@@ -82,10 +82,13 @@ const Navbar = ({ onSearch, value }: NavbarProps) => {
             />
           )}
         </motion.div>
-        <div className="bg-red-200 flex gap-1 p-2 sm:p-2.5 rounded-xl items-center min-w-14 cursor-default">
+        <motion.div
+          variants={itemsVariants}
+          className="bg-red-200 flex gap-1 p-2 sm:p-2.5 rounded-xl items-center min-w-14 cursor-default"
+        >
           <HeartIcon className="text-red-500" size={20} />
           <p className="text-red-900">{favoriteCount}</p>
-        </div>
+        </motion.div>
       </motion.div>
     </motion.div>
   );
