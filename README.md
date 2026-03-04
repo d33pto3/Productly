@@ -71,5 +71,5 @@ Follow these steps to get a local copy up and running.
 
 ---
 
-*Made with ❤️ by a human.*
+*Made with ❤️ by deeptoe.*
 
