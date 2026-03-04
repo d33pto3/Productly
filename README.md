@@ -1,73 +1,75 @@
-# React + TypeScript + Vite
+# Productly
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Productly is a modern, high-performance product showcase platform built with React and Vite. It features a clean, responsive design optimized for both speed and user experience.
 
-Currently, two official plugins are available:
+**[Live Demo](https://productly-opal.vercel.app/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🖥️ Project Preview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![Full Website Screenshot](public/images/website.png)
 
-## Expanding the ESLint configuration
+## 📋 Project Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Productly is designed to offer a seamless browsing experience for users looking for various products. The platform is built using React 19, Vite, and Tailwind CSS, ensuring a modern development workflow and a highly responsive interface. 
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+> [!NOTE]
+> All product images and names used in this project are dummy data sourced from [Picsum](https://picsum.photos/).
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Performance & Best Practices
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+We've prioritized performance and accessibility to ensure the best possible experience for all users. The project achieves excellent scores across all Lighthouse metrics.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Lighthouse Results
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Desktop | Mobile |
+| :---: | :---: |
+| ![Desktop Test Result](public/images/test-desktop.png) | ![Mobile Test Result](public/images/test-mobile.png) |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Key Improvements
+
+- **Performance**: Leveraged Vite's fast build times and localized asset management. CSS is optimized via Tailwind CSS, and images are handled to minimize layout shifts.
+- **Accessibility (a11y)**: Semantic HTML tags (`<header>`, `<main>`, `<section>`, etc.) and proper ARIA labels ensure the site is navigable via screen readers.
+- **SEO**: Implemented proper meta tags, descriptive titles, and a logical heading hierarchy to improve search engine visibility.
+- **Best Practices**: Clean, modular React components using functional patterns and hooks. Code quality is maintained through strictly configured ESLint and TypeScript rules.
+
+---
+
+## 🛠️ Getting Started
+
+Follow these steps to get a local copy up and running.
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/Productly.git
+   cd Productly
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   npm run preview
+   ```
+
+---
+
+*Made with ❤️ by a human.*
+
