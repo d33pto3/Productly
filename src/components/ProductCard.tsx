@@ -15,13 +15,13 @@ const cardVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: "easeOut" }
+    transition: { duration: 0.4, ease: "easeOut" },
   },
   exit: {
     opacity: 0,
     scale: 0.95,
-    transition: { duration: 0.2 }
-  }
+    transition: { duration: 0.2 },
+  },
 };
 
 export function ProductCard({
@@ -59,7 +59,9 @@ export function ProductCard({
         )}
       </AnimatePresence>
 
-      <div className={`flex flex-col h-full transition-opacity duration-500 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
+      <div
+        className={`flex flex-col h-full transition-opacity duration-500 ${isLoaded ? "opacity-100" : "opacity-0"}`}
+      >
         <div className="relative overflow-hidden group">
           <motion.img
             layout
@@ -71,11 +73,14 @@ export function ProductCard({
           <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-300" />
           <HeartIcon
             onClick={() => handleClick(product.id)}
-            className={`w-10 h-10 absolute top-3 right-3 p-2.5 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full shadow-lg transition-all duration-200 hover:scale-110 active:scale-95 hover:cursor-pointer z-10 ${isFavorite
-              ? "fill-red-500 text-red-500"
-              : "text-gray-400 dark:text-gray-500 hover:text-red-400"
-              }`}
-            aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+            className={`w-10 h-10 absolute top-3 right-3 p-2.5 backdrop-blur-sm rounded-full shadow-lg transition-all duration-200 hover:scale-110 active:scale-95 hover:cursor-pointer z-10 ${
+              isFavorite
+                ? "bg-red-500 dark:bg-red-700"
+                : "bg-white/90 dark:bg-gray-800/90 text-gray-400 dark:text-gray-500 hover:text-red-400"
+            }`}
+            aria-label={
+              isFavorite ? "Remove from favorites" : "Add to favorites"
+            }
             size={20}
           />
         </div>

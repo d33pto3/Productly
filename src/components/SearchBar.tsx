@@ -41,7 +41,7 @@ const SearchBar = ({ value, onSearch }: SearchBarProps) => {
   };
 
   return (
-    <div className="relative w-full max-w-md">
+    <div className="relative w-full max-w-md" role="search">
       <SearchIcon
         className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
         size={20}
@@ -61,6 +61,7 @@ const SearchBar = ({ value, onSearch }: SearchBarProps) => {
         value={inputValue}
         onChange={handleChange}
         placeholder="Search Products"
+        aria-label="Search products"
       />
     </div>
   );

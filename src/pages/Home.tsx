@@ -74,7 +74,8 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div className="min-h-[80vh]">
+      <h1 className="sr-only">Premium Product Catalog - Productly</h1>
       <CategoryFilter
         categories={categories}
         selectedCategory={selectedCategory}

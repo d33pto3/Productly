@@ -49,10 +49,11 @@ const Navbar = ({ onSearch, value }: NavbarProps) => {
   };
 
   return (
-    <motion.div
+    <motion.nav
       variants={navbarVariants}
       initial="hidden"
       animate="visible"
+      aria-label="Main Navigation"
       className="px-[10%] py-5 sm:flex justify-between items-center bg-white dark:bg-gray-800 gap-8"
     >
       <Title title="Productly" />
@@ -68,29 +69,34 @@ const Navbar = ({ onSearch, value }: NavbarProps) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          {theme === "light" ? (
-            <MoonIcon
-              className="bg-gray-200 hover:bg-gray-300 rounded-xl p-2 sm:p-2.5 cursor-pointer"
-              size={20}
-              onClick={toggleTheme}
-            />
-          ) : (
-            <SunMediumIcon
-              className="bg-gray-700 hover:bg-gray-600 text-white rounded-xl p-2.5 sm:p-3 cursor-pointer"
-              size={20}
-              onClick={toggleTheme}
-            />
-          )}
+          <button
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+            className="focus:outline-none"
+          >
+            {theme === "light" ? (
+              <MoonIcon
+                className="bg-gray-200 hover:bg-gray-300 rounded-xl p-2.5 sm:p-3 cursor-pointer"
+                size={20}
+              />
+            ) : (
+              <SunMediumIcon
+                className="bg-gray-700 hover:bg-gray-600 text-white rounded-xl p-2.5 sm:p-3 cursor-pointer"
+                size={20}
+              />
+            )}
+          </button>
         </motion.div>
         <motion.div
           variants={itemsVariants}
+          aria-label={`${favoriteCount} items in favorites`}
           className="bg-red-200 flex gap-1 p-2 sm:p-2.5 rounded-xl items-center min-w-14 cursor-default"
         >
           <HeartIcon className="text-red-500" size={20} />
-          <p className="text-red-900">{favoriteCount}</p>
+          <p className="text-red-900" aria-hidden="true">{favoriteCount}</p>
         </motion.div>
       </motion.div>
-    </motion.div>
+    </motion.nav>
   );
 };
 

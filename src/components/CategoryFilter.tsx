@@ -72,10 +72,11 @@ const CategoryFilter = (categoryFilterProps: CategoryFilterProps) => {
   };
 
   return (
-    <motion.div
+    <motion.nav
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      aria-label="Product categories"
       className="font-space px-[10%] flex gap-4 scroll-auto py-3 sm:py-5 bg-white dark:bg-gray-800"
     >
       <div
@@ -105,7 +106,7 @@ const CategoryFilter = (categoryFilterProps: CategoryFilterProps) => {
           </motion.div>
         ))}
       </div>
-    </motion.div>
+    </motion.nav>
   );
 };
 

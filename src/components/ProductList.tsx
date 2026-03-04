@@ -89,7 +89,7 @@ const ProductList = ({ products }: ProductListProps) => {
             activeLinkClassName="!text-white"
             previousClassName="flex items-center justify-center px-4 py-2 border border-blue-600 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors cursor-pointer text-blue-600 font-bold"
             nextClassName="flex items-center justify-center px-4 py-2 border border-blue-600 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors cursor-pointer text-blue-600 font-bold"
-            disabledClassName="opacity-30 cursor-not-allowed grayscale pointer-events-none"
+            disabledClassName="opacity-30 dark:opacity-70 cursor-not-allowed grayscale pointer-events-none"
             breakClassName="px-2 text-gray-400"
           />
         </div>
