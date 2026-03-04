@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type ChangeEvent } from "react";
 import debounce from "lodash.debounce";
-import { SearchIcon } from "../icons/Search";
-import { XIcon } from "../icons/Cancel";
+import { SearchIcon } from "../../icons/Search";
+import { XIcon } from "../../icons/Cancel";
 
 type SearchBarProps = {
   value: string;

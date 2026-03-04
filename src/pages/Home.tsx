@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import type { Product } from "../types/product";
-import ProductList from "../components/ProductList";
-import CategoryFilter from "../components/CategoryFilter";
-import Loading from "../components/Loading";
+import ProductList from "../components/features/products/ProductList";
+import CategoryFilter from "../components/features/filters/CategoryFilter";
+import Loading from "../components/ui/Loading";
 import { useOutletContext } from "react-router";
-import EmptyState from "../components/EmptyState";
+import EmptyState from "../components/ui/EmptyState";
 
 interface LayoutContext {
   searchText: string;

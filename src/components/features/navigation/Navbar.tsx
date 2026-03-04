@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { motion, type Variants } from "motion/react";
-import { HeartIcon } from "../icons/Heart";
-import { MoonIcon } from "../icons/Moon";
-import SearchBar from "./SearchBar";
-import Title from "./Title";
-import { SunMediumIcon } from "../icons/Sun";
-import { useFavorites } from "../context/useFavorites";
+import { HeartIcon } from "../../../icons/Heart";
+import { MoonIcon } from "../../../icons/Moon";
+import SearchBar from "../../ui/SearchBar";
+import Title from "../../ui/Title";
+import { SunMediumIcon } from "../../../icons/Sun";
+import { useFavorites } from "../../../context/useFavorites";
 
 interface NavbarProps {
   value: string;

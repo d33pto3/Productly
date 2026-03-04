@@ -1,6 +1,6 @@
 import { motion, AnimatePresence, type Variants } from "motion/react";
-import { HeartIcon } from "../icons/Heart";
-import type { Product } from "../types/product";
+import { HeartIcon } from "../../../icons/Heart";
+import type { Product } from "../../../types/product";
 import { useState } from "react";
 import ProductSkeleton from "./ProductSkeleton";
 
@@ -85,11 +85,10 @@ export function ProductCard({
           <div className="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-colors duration-300" />
           <HeartIcon
             onClick={() => handleClick(product.id)}
-            className={`w-10 h-10 absolute top-3 right-3 p-2.5 backdrop-blur-sm rounded-full shadow-lg transition-all duration-200 hover:scale-110 active:scale-95 hover:cursor-pointer z-10 ${
-              isFavorite
-                ? "bg-red-500 dark:bg-red-700"
-                : "bg-white/90 dark:bg-gray-800/90 text-gray-400 dark:text-gray-500 hover:text-red-400"
-            }`}
+            className={`w-10 h-10 absolute top-3 right-3 p-2.5 backdrop-blur-sm rounded-full shadow-lg transition-all duration-200 hover:scale-110 active:scale-95 hover:cursor-pointer z-10 ${isFavorite
+              ? "bg-red-500 dark:bg-red-700"
+              : "bg-white/90 dark:bg-gray-800/90 text-gray-400 dark:text-gray-500 hover:text-red-400"
+              }`}
             aria-label={
               isFavorite ? "Remove from favorites" : "Add to favorites"
             }

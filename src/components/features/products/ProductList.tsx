@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import type { Product } from "../types/product";
+import type { Product } from "../../../types/product";
 import ReactPaginate from "react-paginate";
 import { ProductCard } from "./ProductCard";
-import { useFavorites } from "../context/useFavorites";
+import { useFavorites } from "../../../context/useFavorites";
 import { motion, AnimatePresence, type Variants } from "motion/react";
 
 type ProductListProps = {
@@ -64,7 +64,7 @@ const ProductList = ({ products }: ProductListProps) => {
         variants={gridVariants}
         initial="hidden"
         animate="visible"
-        className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+        className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
       >
         <AnimatePresence mode="popLayout">
           {currentItems.map((product, index) => (
